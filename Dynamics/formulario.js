@@ -32,19 +32,24 @@ main_form.addEventListener("submit", function(event){
     else{
         console.log("Género inválido");
     }
-    let input_intereses = document.querySelector("input[name='intereses']:checked");
+    let input_intereses = document.querySelectorAll("input[name='intereses']:checked");
     let intereses = ["Tecnologia", "Deportes", "Musica", "Arte"];
-    console.log("Interes(es) seleccionado(s): " + input_intereses.value);
-    if(intereses.indexOf(input_genero.value) != -1){
-        console.log("Interes(es) válido(s)");
+    let todos_validos = true;
+    for (let i = 0; i < input_intereses.length; i++) {
+        let valor = input_intereses[i].value;
+        if (intereses.indexOf(valor) === -1) {
+            todos_validos = false;
+        }
     }
-    else{
-        console.log("Interes(es) inválido(s)");
+    if (todos_validos) {
+        console.log("Intereses válidos.");
+    } else {
+        console.log("Uno o más intereses son inválidos.");
     }
-    let input_pais = document.querySelector("input[name='intereses']:selected");
+    let input_pais = document.querySelector("select[name='pais']");
     let pais = ["Mexico", "Colombia", "Argentina", "Chile", "Peru", "Venezuela", "España", "Otros"];
     console.log("País seleccionado: " + input_pais.value);
-    if(pais.indexOf(input_genero.value) != -1){
+    if(pais.indexOf(input_pais.value) != -1){
         console.log("País válido");
     }
     else{
