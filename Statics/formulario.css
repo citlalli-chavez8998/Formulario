@@ -1,0 +1,34 @@
+body{
+    background-color: rgb(222, 178, 254);
+}
+label{
+    font-size: 18px;
+}
+#contenedor{
+    display: flex;
+    flex-flow: column wrap;
+    background-color: rgb(240, 248, 255);
+    border-radius: 20px;
+    margin: 30px 30px 30px 30px;
+    padding: 40px 40px 40px 40px;
+    width:40%;
+    align-content:center;
+    justify-self: center;
+}
+#preguntas{
+    display: flex;
+    flex-direction: column; 
+    width: 100%;
+}
+
+#preguntas input,
+#preguntas textarea,
+#preguntas select,
+#preguntas button {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
